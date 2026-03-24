@@ -11,5 +11,11 @@ COPY . .
 # Install GIMP harness as example (editable mode)
 RUN cd gimp/agent-harness && pip install --no-cache-dir -e .
 
+# Create non-root user
+RUN addgroup --system appgroup && adduser --system --ingroup appgroup appuser
+RUN chown -R appuser:appgroup /app
+
+USER appuser
+
 # Default: show help
 CMD ["cli-anything-gimp", "--help"]
