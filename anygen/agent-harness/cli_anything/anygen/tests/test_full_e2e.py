@@ -9,14 +9,11 @@ import json
 import os
 import subprocess
 import sys
-import tempfile
-import zipfile
-from pathlib import Path
 
 import pytest
 
-from cli_anything.anygen.utils.anygen_backend import get_api_key, DOWNLOADABLE_OPERATIONS
-from cli_anything.anygen.core.task import create_task, poll_task, download_file, run_full_workflow
+from cli_anything.anygen.utils.anygen_backend import get_api_key
+from cli_anything.anygen.core.task import create_task, run_full_workflow
 from cli_anything.anygen.core.export import verify_file
 
 
